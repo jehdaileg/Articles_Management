@@ -1,0 +1,36 @@
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.card-section:hover
+{
+	background: black;
+	animation-name: rotation;
+	animation-duration: 1s;
+}
+
+@keyframes rotation 
+{
+	0%   {transform: rotate(1deg)};
+	100% {transform: rotate(1deg)};
+} 
+
+
+
+.lien_partage: hover {
+
+	border-bottom: none;
+	margin: none;
+	color: green;
+
+}
+.lien_partage: {
+
+	border-bottom: none;
+	margin: none;
+	margin-bottom: none;
+
+}
