@@ -92,9 +92,9 @@
 
   		 		         &nbsp;&nbsp;&nbsp;
 
-  		 				<a href="" class="btn btn-outline-warning"><span class="fa fa-thumbs-up"></span>J'aime</a>&nbsp;&nbsp;&nbsp;
+  		 				<a href="{{route('add_like', $article->id)}}" class="btn btn-outline-warning"><span class="fa fa-thumbs-up"></span>J'aime <span>{{$article->nbre_jaime}}</span></a>&nbsp;&nbsp;&nbsp;
 
-  		 				<a href="" class="btn btn-outline-danger"><span class="fa fa-thumbs-down"></span>Je n'aime pas</a>
+  		 				<a href="{{route('add_dislike', $article->id)}}" class="btn btn-outline-danger"><span class="fa fa-thumbs-down"></span>Je n'aime pas <span>{{$article->nbre_jaime_pas}}</span></a>
 
   		 				</div>
 

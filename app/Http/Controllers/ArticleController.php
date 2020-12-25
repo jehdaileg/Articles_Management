@@ -112,4 +112,61 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index')->with('success', 'Article supprimé avec Succès! Félicitations');
     }
+
+    /**
+
+    Ici la fonction pour ajouter les likes (j'aime)
+    Elle a besoin de l'id en paramètre pour faciliter le ciblage et l'accès aux attributs
+    de l'article en question 
+
+    */
+
+    public function add_like($id)
+    {
+        //
+       $article = Article::find($id);
+
+       $article->nbre_jaime++;
+
+       $article->save();
+
+       return back();
+    }
+
+    /**
+
+     Ici la fonction pour ajouter les Dislikes (j'aime pas)
+    Elle a besoin de l'id en paramètre pour faciliter le ciblage et l'accès aux attributs
+    de l'article en question 
+
+
+    */
+
+    public function add_dislike($id)
+    {
+        //
+        $article = Article::find($id);
+
+        $article->nbre_jaime_pas++;
+
+        $article->save();
+
+        return back();
+
+
+    }
+
+/*
+    public function search_by_titre($titre)
+    {
+        //
+        $article = Article::find($titre);
+
+        return view('articles.index', compact('article'));
+    }  */
+
+
+
+
+
 }

@@ -22,4 +22,10 @@ Route::get('articles', [ArticleController::class, 'index']);
 
 Route::resource('articles', ArticleController::class);
 
+Route::get('like/{id}', [ArticleController::class, 'add_like'])->name('add_like');
+
+Route::get('unlike/{id}', [ArticleController::class, 'add_dislike'])->name('add_dislike');
+
+//Route::get('search/{titre}', [ArticleController::class, 'search_by_titre'])->name('search_by_titre');
+
 
