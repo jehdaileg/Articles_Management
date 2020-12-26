@@ -30,9 +30,15 @@
 		</div>
 
 		<div class="container">
+
 			<div class="list-group">
-				<p class="list-group-item">1er commentaire</p>
-				<p class="list-group-item">2ème commentaire</p>
+
+				@foreach($article->commentaires as $commentaire)
+
+				<p class="list-group-item">{{$commentaire->content_commentaire}}</p> 
+
+				@endforeach
+				
 				
 			</div>
 			
@@ -41,17 +47,24 @@
 		<div class="container">
 					<h3>Commenter l'article ?</h3>
 
-					<form action="">
+					<form action="{{route('commentaires.store')}}" method="post" class="form">
+						@csrf
+						@method('post')
+
+						<div class="form-group">
+							<input type="hidden" name="article_id" value="{{$article->id}}" >
+						</div>
 
 						<div class="form-group">
 
-							<textarea name="content" class="form-control" cols="30" rows="10"></textarea>
+							<textarea name="content_commentaire" class="form-control" cols="30" rows="10"> {{old('content_commentaire')}} </textarea>
 							
 						</div>
 						
 						<button type="submit" class="btn btn-sm btn-warning"><span class="fa fa-save"></span> Poster</button>
 					</form>
-				</div>
+
+		</div>
 
 
 

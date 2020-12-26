@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,8 @@ Route::resource('articles', ArticleController::class);
 Route::get('like/{id}', [ArticleController::class, 'add_like'])->name('add_like');
 
 Route::get('unlike/{id}', [ArticleController::class, 'add_dislike'])->name('add_dislike');
+
+Route::resource('commentaires', CommentaireController::class);
 
 //Route::get('search/{titre}', [ArticleController::class, 'search_by_titre'])->name('search_by_titre');
 

@@ -12,4 +12,13 @@ class Article extends Model
     protected $fillable = ['titre', 'description', 'nbre_jaime'];
 
    // public $guarded = [];
+
+    //generate all commentaires 
+
+    public function commentaires()
+    {
+
+    	return $this->hasMany('App\Models\Commentaire');
+    	
+    }
 }
